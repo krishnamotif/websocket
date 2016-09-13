@@ -1,9 +1,6 @@
 package org.springframework.integration.samples.websocket.standard.server;
 
-import java.text.DateFormat;
-import java.text.DecimalFormat;
 import java.util.Collections;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -40,15 +37,15 @@ import org.springframework.messaging.support.GenericMessage;
  */
 @Configuration
 @EnableAutoConfiguration
-public class NewApplication {
-
-    public static void main(String[] args) throws Exception {
-        ConfigurableApplicationContext ctx = SpringApplication.run(NewApplication.class, args);
+public class StockApplication extends BaseApp{
+	public static void main(String[] args) throws Exception {
+    	Class[] clazz = new Class[] { StockApplication.class};
+        ConfigurableApplicationContext ctx = SpringApplication.run(clazz, args);
         System.out.println("Hit 'Enter' to terminate");
         System.in.read();
         ctx.close();
     }
-
+	
     @Bean
     public ServerWebSocketContainer serverWebSocketContainer() {
         return new ServerWebSocketContainer("/stock").setAllowedOrigins("*");
@@ -129,7 +126,7 @@ public class NewApplication {
     public MessageHandler loggingChannelAdapter() {
         LoggingHandler loggingHandler = new LoggingHandler("info");
         loggingHandler.setLogExpressionString(
-                "'The time ' + payload + ' has been sent to the WebSocketSession ' + headers.simpSessionId");
+                "'Stock info ' + payload + ' has been sent to the WebSocketSession ' + headers.simpSessionId");
         return loggingHandler;
     }
 }
