@@ -95,7 +95,7 @@ public class NewsApplication extends BaseApp{
 			@Override
 			protected Object transformPayload(Object payload) throws Exception {
 				Map<String, NewsArticleDTO> returnData = new HashMap<String, NewsArticleDTO>();
-				returnData.put("newarticle", new NewsArticleDTO());
+				returnData.put("newsArticle", new NewsArticleDTO());
 
 				return returnData;
 			}

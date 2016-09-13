@@ -35,7 +35,7 @@ public class NewsArticleDTO implements Comparable<NewsArticleDTO> {
     	title = "Team 'Much wOw' wins hackathon. Counter: " + c;
     	date = (new Date()).getTime();
     	tweetCount = 0L;
-    	imageUrl = "https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwirms7nsY3PAhUTzmMKHSWgC6UQjRwIBw&url=https%3A%2F%2Ftwitter.com%2Fdogethedog&psig=AFQjCNFKuJ0mhK4hTB8dz5MWdsqWWL4T-A&ust=1473892026817134";
+    	imageUrl = "http://i.imgur.com/AnMOqWc.png";
     }
 
     @Override
